@@ -1,0 +1,12 @@
+
+import org.openqa.selenium.TakesScreenshot;
+// store screenshots
+		public  void takeScreenShot(String filePath) {
+			File scrFile = ((TakesScreenshot)GlobalVariables.driver).getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(scrFile, new File(filePath));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}	   
+		}
+    
